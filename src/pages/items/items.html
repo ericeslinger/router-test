@@ -17,20 +17,13 @@
   <p>Hey, it is item number {{ itemId }}. This number should match the value in the URL bar.</p>
   <p>The id of my view controller is {{ vc.id }}.</p>
   <ion-list>
-    <ion-item>
-      Visit item 1 with <button ion-button (tap)="pushString(1)">push</button> or <button ion-button (tap)="setRootString(1)">setRoot</button>
-    </ion-item>
-    <ion-item>
-      Visit item 2 with <button ion-button (tap)="pushString(2)">push</button> or <button ion-button (tap)="setRootString(2)">setRoot</button>
-    </ion-item>
-    <ion-item>
-      Visit item 3 with <button ion-button (tap)="pushString(3)">push</button> or <button ion-button (tap)="setRootString(3)">setRoot</button>
-    </ion-item>
-    <ion-item>
-      Visit item 4 with <button ion-button (tap)="pushString(4)">push</button> or <button ion-button (tap)="setRootString(4)">setRoot</button>
-    </ion-item>
-    <ion-item>
-      Visit item 5 with <button ion-button (tap)="pushString(5)">push</button> or <button ion-button (tap)="setRootString(5)">setRoot</button>
+    <ion-item *ngFor="let i of [1, 2, 3, 4, 5]">
+      Visit item {{i}} with
+      (works)
+      <button ion-button (tap)="push(i)">push</button> or <button ion-button (tap)="setRoot(i)">setRoot</button>
+      or
+      (doesn't)
+      <button ion-button (tap)="pushString(i)">pushString</button> or <button ion-button (tap)="setRootString(i)">setRootString</button>
     </ion-item>
   </ion-list>
 </ion-content>

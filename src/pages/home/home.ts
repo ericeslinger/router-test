@@ -11,4 +11,10 @@ export class HomePage {
   go() {
     this.navCtrl.setRoot(ItemsPage, { id: 2 });
   }
+  reallyGo() {
+    window.history.pushState(null, 'foo', '/items/4');
+    window.history.pushState(null, 'foo', '/items/4');
+    window.history.back();
+    // window.location.assign('/items/4');
+  }
 }
